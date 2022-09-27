@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".create_order">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="top"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/buttoncreateorder"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:entries="@array/products"
+            android:textAlignment="center" />
+
+        <ImageView
+            android:id="@+id/imageProduct"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/mfutwhite"/>
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/radioWhite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:onClick="radclick"
+                android:text="Белый"/>
+
+            <RadioButton
+                android:id="@+id/radioBlack"
+                android:onClick="radclick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Чёрный"/>
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Цена"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/textPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="100 руб"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            android:textSize="40sp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttoncreateorder"
+        android:onClick="addProductButton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Добавить в корзину"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
